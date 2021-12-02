@@ -3,7 +3,7 @@ name: Continuous Integration
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
 
 env:
@@ -71,7 +71,7 @@ jobs:
           run: |
             git config --global user.email "opensource@tophat.com"
             git config --global user.name "Top Hat Open Source"
-            git config --global init.defaultBranch master
+            git config --global init.defaultBranch main
         - name: Tests
           run: yarn test:ci
         - name: Linting
