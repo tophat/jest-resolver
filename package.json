@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "Simple jest resolver which delegates to Yarn's PnP resolver",
   "main": "./lib/index.js",
-  "repository": "git@github.com:tophat/jest-resolve",
+  "repository": "git@github.com:tophat/jest-resolver",
   "author": "Top Hat Monocle Corp. <opensource@tophat.com>",
   "license": "Apache-2.0",
   "publishConfig": {
@@ -21,7 +21,7 @@
     "@commitlint/cli": "^12.1.1",
     "@monodeploy/plugin-github": "^0.3.13",
     "@tophat/commitlint-config": "^0.3.4",
-    "@tophat/conventional-changelog-config": "^0.5.6",
+    "@tophat/conventional-changelog-config": "^0.5.9",
     "@yarnpkg/sdks": "^2.5.1-rc.4",
     "all-contributors-cli": "^6.20.0",
     "commitizen": "^4.2.4",

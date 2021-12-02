@@ -545,13 +545,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tophat/conventional-changelog-config@npm:^0.5.6":
-  version: 0.5.6
-  resolution: "@tophat/conventional-changelog-config@npm:0.5.6"
+"@tophat/conventional-changelog-config@npm:^0.5.9":
+  version: 0.5.9
+  resolution: "@tophat/conventional-changelog-config@npm:0.5.9"
   dependencies:
     "@tophat/commit-utils-core": ^0.5.4
     compare-func: ^2.0.0
-  checksum: 353366a57670519aeb00137da1601ffdf7434e47687001d243975e412fbd1ce343ffeea2349c666f33627d5be856c54c345cf4b8365860fe4e9549a2b6e2285d
+  checksum: 4683c789b729bcaf5c412ebb28efe723d9c772f08f307fc4206f8ba3b09cf860ebec72fecb6311549d046053aa25dd19f1dc48968d8499f01fb3ce69867c23b5
   languageName: node
   linkType: hard
 
@@ -562,7 +562,7 @@ __metadata:
     "@commitlint/cli": ^12.1.1
     "@monodeploy/plugin-github": ^0.3.13
     "@tophat/commitlint-config": ^0.3.4
-    "@tophat/conventional-changelog-config": ^0.5.6
+    "@tophat/conventional-changelog-config": ^0.5.9
     "@yarnpkg/sdks": ^2.5.1-rc.4
     all-contributors-cli: ^6.20.0
     commitizen: ^4.2.4
