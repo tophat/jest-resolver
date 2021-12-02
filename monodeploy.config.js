@@ -1,6 +1,14 @@
 module.exports = {
     conventionalChangelogConfig: '@tophat/conventional-changelog-config',
-    persistVersions: true,
+    maxConcurrentWrites: 1,
     changelogFilename: './CHANGELOG.md',
-    plugins: ['@monodeploy/plugin-github'],
+    autoCommit: true,
+    autoCommitMessage: 'chore: release jest-resolver [skip ci]',
+    plugins: process.env.PREVIEW === '1' ? [] : ['@monodeploy/plugin-github'],
+    git: {
+        push: true,
+        tag: true,
+    },
+    persistVersions: true,
+    changesetIgnorePatterns: ['**/*.test.ts'],
 }
