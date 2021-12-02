@@ -1,6 +1,6 @@
 {
   "name": "@tophat/jest-resolver",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Simple jest resolver which delegates to Yarn's PnP resolver",
   "main": "./lib/index.js",
   "repository": "git@github.com:tophat/jest-resolver",
