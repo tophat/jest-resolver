@@ -1,0 +1,56 @@
+name: Release
+
+on:
+  workflow_dispatch:
+
+env:
+  CI: 1
+  ARTIFACT_DIR: ./artifacts
+
+jobs:
+  release:
+    name: Publish Jest Resolver
+    runs-on: ubuntu-20.04
+    steps:
+        - uses: actions/checkout@v2
+          with:
+            token: ${{ secrets.TOPHAT_BOT_GH_TOKEN }}
+            fetch-depth: 0
+        - uses: ./.github/actions/detect-env
+        - name: Setup Node.js
+          uses: actions/setup-node@v1
+          with:
+            node-version: ${{ env.NODE_VERSION }}
+        - name: Create artifacts directory
+          run: mkdir -p ${{ env.ARTIFACT_DIR }}
+        - name: Restore yarn cache
+          id: yarn-cache
+          uses: actions/cache@v2
+          with:
+            path: |
+              ./.yarn
+              .pnp.*
+            key: ${{ env.NODE_VERSION }}-${{ env.YARN_VERSION }}-${{ hashFiles('yarn.lock') }}
+        - name: Install dependencies
+          run: yarn install --immutable
+        - name: Configure Git
+          run: |
+            git config --global user.name tophat-opensource-bot
+            git config --global user.email opensource-leads+bot@tophatmonocle.com
+            git config --global init.defaultBranch master
+        - name: Publish via Monodeploy
+          if: github.ref == 'refs/heads/master'
+          env:
+            NPM_PUBLISH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+            GH_TOKEN: ${{ secrets.TOPHAT_BOT_GH_TOKEN }}
+          run: |
+            yarn monodeploy --config-file monodeploy.config.js --log-level 0
+        - name: Log Issues
+          if: ${{ failure() }}
+          run: |
+            git status
+        - name: Upload Artifacts
+          uses: actions/upload-artifact@v2
+          with:
+            name: build-artifacts
+            path: ${{ env.ARTIFACT_DIR }}

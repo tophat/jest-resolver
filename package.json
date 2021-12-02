@@ -1,0 +1,43 @@
+{
+  "name": "@tophat/jest-resolver",
+  "version": "0.0.0",
+  "description": "Simple jest resolver which delegates to Yarn's PnP resolver",
+  "main": "./lib/index.js",
+  "repository": "git@github.com:tophat/jest-resolve",
+  "author": "Top Hat Monocle Corp. <opensource@tophat.com>",
+  "license": "Apache-2.0",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "clean": "rm -rf ${ARTIFACT_DIR:-artifacts}",
+    "contrib:add": "all-contributors add",
+    "contrib:generate": "all-contributors generate",
+    "contrib:check": "all-contributors check"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.1",
+    "@monodeploy/plugin-github": "^0.3.13",
+    "@tophat/commitlint-config": "^0.3.4",
+    "@tophat/conventional-changelog-config": "^0.5.6",
+    "@yarnpkg/sdks": "^2.5.1-rc.4",
+    "all-contributors-cli": "^6.20.0",
+    "commitizen": "^4.2.4",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.2",
+    "monodeploy": "^2.8.17",
+    "yaml-validator": "^3.0.1"
+  },
+  "lint-staged": {
+    "yarn.lock": [
+      "yarn dedupe --check"
+    ],
+    "*.{yml,yaml}": [
+      "yarn yaml-validator"
+    ]
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "packageManager": "yarn@3.1.1"
+}
