@@ -13,7 +13,9 @@
     "clean": "rm -rf ${ARTIFACT_DIR:-artifacts}",
     "contrib:add": "all-contributors add",
     "contrib:generate": "all-contributors generate",
-    "contrib:check": "all-contributors check"
+    "contrib:check": "all-contributors check",
+    "lint:ci": "echo Do nothing.",
+    "test:ci": "echo Do nothing."
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.1",
