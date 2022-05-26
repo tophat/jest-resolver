@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "description": "Simple jest resolver which delegates to Yarn's PnP resolver",
   "main": "./lib/index.js",
-  "repository": "git@github.com:tophat/jest-resolver",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tophat/jest-resolver.git"
+  },
   "author": "Top Hat Monocle Corp. <opensource@tophat.com>",
   "license": "Apache-2.0",
   "publishConfig": {
@@ -19,15 +22,15 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.1",
-    "@monodeploy/plugin-github": "^0.3.13",
-    "@tophat/commitlint-config": "^0.3.4",
-    "@tophat/conventional-changelog-config": "^0.5.9",
-    "@yarnpkg/sdks": "^2.5.1-rc.4",
+    "@monodeploy/plugin-github": "^0.4.1",
+    "@tophat/commitlint-config": "^0.3.7",
+    "@tophat/conventional-changelog-config": "^0.6.2",
+    "@yarnpkg/sdks": "^3.0.0-rc.6",
     "all-contributors-cli": "^6.20.0",
     "commitizen": "^4.2.4",
     "husky": "^7.0.4",
     "lint-staged": "^12.1.2",
-    "monodeploy": "^2.8.17",
+    "monodeploy": "^3.0.1",
     "yaml-validator": "^3.0.1"
   },
   "lint-staged": {
@@ -38,8 +41,5 @@
       "yarn yaml-validator"
     ]
   },
-  "engines": {
-    "node": ">=14.0.0"
-  },
-  "packageManager": "yarn@3.1.1"
+  "packageManager": "yarn@3.2.1"
 }
